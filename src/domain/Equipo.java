@@ -15,9 +15,10 @@ public class Equipo {
         this.id = id;
         this.nombre = nombre;
         this.localidad = localidad;
-        this.creacion = creacion;
-        this.jugadores = new ArrayList<>();
+        jugadores = new ArrayList<>();
     }
+
+    public Equipo() {}
 
     public Long getId() {
         return id;
@@ -57,5 +58,16 @@ public class Equipo {
 
     public void setJugadores(ArrayList<Jugador> jugadores) {
         this.jugadores = jugadores;
+    }
+
+    @Override
+    public String toString() {
+        return "Equipo{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", localidad='" + localidad + '\'' +
+                ", creacion=" + creacion +
+                ", jugadores=" + jugadores +
+                '}';
     }
 }
