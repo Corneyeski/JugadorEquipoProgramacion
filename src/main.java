@@ -174,6 +174,9 @@ public class main {
             equipos.get(equipo).getJugadores().add(jugador);
         }
     }
+    public static Integer max(ArrayList<Integer> jugadores){
+
+    }
     public static void consultaJ(){
 
         int opcion2 = 0;
@@ -233,7 +236,35 @@ public class main {
                     }
                     break;
                 case 6:
+                    ArrayList<Integer> alac = new ArrayList<>();
+                    ArrayList<Integer> alar = new ArrayList<>();
+                    ArrayList<Integer> alaa = new ArrayList<>();
 
+                    ArrayList<Integer> basec = new ArrayList<>();
+                    ArrayList<Integer> baser = new ArrayList<>();
+                    ArrayList<Integer> basea = new ArrayList<>();
+
+                    ArrayList<Integer> pibotc = new ArrayList<>();
+                    ArrayList<Integer> pibotr = new ArrayList<>();
+                    ArrayList<Integer> pibota = new ArrayList<>();
+
+                   for(Jugador j : lista){
+                       if(Posicion.ala == j.getPosicion()){
+                            alac.add(j.getCanasto());
+                            alar.add(j.getReboto());
+                            alaa.add(j.getAsisto());
+                       }
+                       if(Posicion.base == j.getPosicion()){
+                            basec.add(j.getCanasto());
+                            baser.add(j.getReboto());
+                            basea.add(j.getAsisto());
+                       }
+                       if(Posicion.pibot == j.getPosicion()){
+                           pibotc.add(j.getCanasto());
+                           pibotr.add(j.getReboto());
+                           pibota.add(j.getAsisto());
+                       }
+                   }
                     break;
                 case 7:
 
