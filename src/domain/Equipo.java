@@ -15,6 +15,7 @@ public class Equipo {
         this.id = id;
         this.nombre = nombre;
         this.localidad = localidad;
+        this.creacion = creacion;
         jugadores = new ArrayList<>();
     }
 
