@@ -20,7 +20,6 @@ public class Fichero {
     public void grabar(Object o) {
         try  {
             XMLEncoder coder = new XMLEncoder(new FileOutputStream(new File(nombre)));
-            System.out.println("entro");
             coder.writeObject(o);
             coder.close();
         } catch (FileNotFoundException ex) {
