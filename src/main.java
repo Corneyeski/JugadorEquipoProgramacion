@@ -48,6 +48,7 @@ public class main {
             }
         }while(opcion != 5);
         System.out.println("fin del programa");
+        fichero.grabar(equipos);
     }
     public static int menu(){
 
@@ -174,8 +175,37 @@ public class main {
             equipos.get(equipo).getJugadores().add(jugador);
         }
     }
-    public static Integer max(ArrayList<Integer> jugadores){
+    public static void media(ArrayList<Integer> jugadores, String posicion, String que){
+        int media = 0;
+        for(int i : jugadores){
+            media += i;
+        }
+        System.out.println("La media de " + que + " de " + posicion + " es " + media / jugadores.size());
+    }
+    public static void max(ArrayList<Integer> jugadores, String posicion, String que){
+        int max = 0;
+        for(int i : jugadores){
+            if(i > max){
+                max = i;
+            }
+        }
+        System.out.println("La media de " + que + " de " + posicion + " es " + max);
+    }
+    public static void min(ArrayList<Integer> jugadores, String posicion, String que){
 
+        int max = 0;
+        for(int i : jugadores){
+            if(i > max){
+                max = i;
+            }
+        }
+        int min = max;
+        for(int i : jugadores){
+            if(i < min){
+                min = i;
+            }
+        }
+        System.out.println("La media de " + que + " de " + posicion + " es " + min);
     }
     public static void consultaJ(){
 
@@ -265,9 +295,83 @@ public class main {
                            pibota.add(j.getAsisto());
                        }
                    }
+                    media(alac,"ala","canastas");
+                    media(alaa,"ala","asistencias");
+                    media(alar,"ala","rebotes");
+
+                    media(basec,"base","canastas");
+                    media(basea,"base","asistencias");
+                    media(baser,"base","rebotes");
+
+                    media(pibotc,"pibot","rebocanastastes");
+                    media(basea,"pibot","asistencias");
+                    media(baser,"pibot","rebotes");
                     break;
                 case 7:
+                    ArrayList<Integer> alac2 = new ArrayList<>();
+                    ArrayList<Integer> alar2 = new ArrayList<>();
+                    ArrayList<Integer> alaa2 = new ArrayList<>();
 
+                    ArrayList<Integer> basec2 = new ArrayList<>();
+                    ArrayList<Integer> baser2 = new ArrayList<>();
+                    ArrayList<Integer> basea2 = new ArrayList<>();
+
+                    ArrayList<Integer> pibotc2 = new ArrayList<>();
+                    ArrayList<Integer> pibotr2 = new ArrayList<>();
+                    ArrayList<Integer> pibota2 = new ArrayList<>();
+
+                    for(Jugador j : lista){
+                        if(Posicion.ala == j.getPosicion()){
+                            alac2.add(j.getCanasto());
+                            alar2.add(j.getReboto());
+                            alaa2.add(j.getAsisto());
+                        }
+                        if(Posicion.base == j.getPosicion()){
+                            basec2.add(j.getCanasto());
+                            baser2.add(j.getReboto());
+                            basea2.add(j.getAsisto());
+                        }
+                        if(Posicion.pibot == j.getPosicion()){
+                            pibotc2.add(j.getCanasto());
+                            pibotr2.add(j.getReboto());
+                            pibota2.add(j.getAsisto());
+                        }
+                    }
+                    media(alac2,"ala","canastas");
+                    media(alaa2,"ala","asistencias");
+                    media(alar2,"ala","rebotes");
+
+                    max(alac2,"ala","canastas");
+                    max(alaa2,"ala","asistencias");
+                    max(alar2,"ala","rebotes");
+
+                    min(alac2,"ala","canastas");
+                    min(alaa2,"ala","asistencias");
+                    min(alar2,"ala","rebotes");
+
+                    media(basec2,"base","canastas");
+                    media(basea2,"base","asistencias");
+                    media(baser2,"base","rebotes");
+
+                    max(basec2,"base","canastas");
+                    max(basea2,"base","asistencias");
+                    max(baser2,"base","rebotes");
+
+                    min(basec2,"base","canastas");
+                    min(basea2,"base","asistencias");
+                    min(baser2,"base","rebotes");
+
+                    media(pibotc2,"pibot","rebocanastastes");
+                    media(pibota2,"pibot","asistencias");
+                    media(pibotr2,"pibot","rebotes");
+
+                    max(pibotc2,"pibot","rebocanastastes");
+                    max(pibota2,"pibot","asistencias");
+                    max(pibotr2,"pibot","rebotes");
+
+                    min(pibotc2,"pibot","rebocanastastes");
+                    min(pibota2,"pibot","asistencias");
+                    min(pibotr2,"pibot","rebotes");
                     break;
             }
         }while(opcion2 != 8);
