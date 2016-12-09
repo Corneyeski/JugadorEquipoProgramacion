@@ -175,7 +175,9 @@ public class main {
             jugador.setReboto(pedirEntero("rebotes del jugador?"));
             jugador.setPosicion(posicion());
             Equipo equipo1 = equipos.get(equipo);
-            equipo1.getJugadores().add(jugador);
+            ArrayList<Jugador> algo= equipo1.getJugadores();
+            algo.add(jugador);
+            equipo1.setJugadores(algo);
             equipos.put(equipo,equipo1);
         }
     }
