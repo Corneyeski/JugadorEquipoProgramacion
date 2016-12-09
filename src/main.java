@@ -22,7 +22,7 @@ public class main {
 
     public static void main(String []args){
 
-        fichero = new Fichero("personas.xml");
+        fichero = new Fichero("basket.xml");
         equipos = (HashMap<String, Equipo>) fichero.leer();
         if (equipos == null) {
             equipos = new HashMap<>();
@@ -88,8 +88,10 @@ public class main {
     }
     public static Posicion posicion(){
 
-        String p = pedirCadena("posicion del jugador?");
         do {
+            System.out.println("Posiciones ala, pibot, base");
+            String p = pedirCadena("posicion del jugador?");
+
             if (p.equalsIgnoreCase("ala")) {
                 return Posicion.ala;
             }
