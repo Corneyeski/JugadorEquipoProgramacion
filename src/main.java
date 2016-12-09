@@ -174,9 +174,9 @@ public class main {
             jugador.setAsisto(pedirEntero("asistencias del jugador?"));
             jugador.setReboto(pedirEntero("rebotes del jugador?"));
             jugador.setPosicion(posicion());
-            ArrayList<Jugador> prueba = equipos.get(equipo).getJugadores();
-            prueba.add(jugador);
-            equipos.get(equipo).setJugadores(prueba);
+            Equipo equipo1 = equipos.get(equipo);
+            equipo1.getJugadores().add(jugador);
+            equipos.put(equipo,equipo1);
         }
     }
     public static void media(ArrayList<Integer> jugadores, String posicion, String que){
