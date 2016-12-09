@@ -11,12 +11,12 @@ public class Equipo {
     private Date creacion;
     private ArrayList<Jugador> jugadores;
 
-    public Equipo(Long id, String nombre, String localidad, Date creacion) {
+    public Equipo(Long id, String nombre, String localidad, Date creacion, ArrayList<Jugador> jugadores) {
         this.id = id;
         this.nombre = nombre;
         this.localidad = localidad;
         this.creacion = creacion;
-        jugadores = new ArrayList<>();
+        this.jugadores = jugadores;
     }
 
     public Equipo() {}
