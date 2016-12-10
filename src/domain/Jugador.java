@@ -6,8 +6,6 @@ import java.util.Date;
  */
 public class Jugador {
 
-
-    private Long id;
     private String nombre;
     private Date nacimiento;
     private int canasto;
@@ -17,22 +15,13 @@ public class Jugador {
 
     public Jugador() {}
 
-    public Jugador(Long id, String nombre, Date nacimiento, int canasto, int asisto, int reboto, Posicion posicion) {
-        this.id = id;
+    public Jugador(String nombre, Date nacimiento, int canasto, int asisto, int reboto, Posicion posicion) {
         this.nombre = nombre;
         this.nacimiento = nacimiento;
         this.canasto = canasto;
         this.asisto = asisto;
         this.reboto = reboto;
         this.posicion = posicion;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getNombre() {
@@ -86,7 +75,6 @@ public class Jugador {
     @Override
     public String toString() {
         return "Jugador{" +
-                "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", nacimiento=" + nacimiento +
                 ", canasto=" + canasto +

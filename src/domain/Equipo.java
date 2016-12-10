@@ -5,28 +5,20 @@ import java.util.Date;
 
 public class Equipo {
 
-    private Long id;
     private String nombre;
     private String localidad;
     private Date creacion;
     private ArrayList<Jugador> jugadores;
 
-    public Equipo(Long id, String nombre, String localidad, Date creacion, ArrayList<Jugador> jugadores) {
-        this.id = id;
+    public Equipo( String nombre, String localidad, Date creacion) {
         this.nombre = nombre;
         this.localidad = localidad;
         this.creacion = creacion;
-        this.jugadores = jugadores;
+        jugadores = new ArrayList<>();
     }
 
-    public Equipo() {}
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public Equipo() {
+        jugadores = new ArrayList<>();
     }
 
     public String getNombre() {
@@ -64,7 +56,6 @@ public class Equipo {
     @Override
     public String toString() {
         return "Equipo{" +
-                "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", localidad='" + localidad + '\'' +
                 ", creacion=" + creacion +

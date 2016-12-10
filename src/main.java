@@ -35,9 +35,11 @@ public class main {
             switch (opcion) {
                 case 1:
                     registrarE();
+                    fichero.grabar(equipos);
                     break;
                 case 2:
                     registrarJ();
+                    fichero.grabar(equipos);
                     break;
                 case 3:
                     consultaJ();
@@ -48,7 +50,6 @@ public class main {
             }
         }while(opcion != 5);
         System.out.println("fin del programa");
-        fichero.grabar(equipos);
     }
     public static int menu(){
 
@@ -79,8 +80,8 @@ public class main {
 
         System.out.println("1. Buscar equipo por localidad");
         System.out.println("2. Buscar jugadores de un equipo");
-        System.out.println("3. asistencias por rango");
-        System.out.println("4. buscar por posicion");
+        System.out.println("3. buscar por posicion en un equipo");
+        System.out.println("4. jugador con mas canastas de un equipo");
         System.out.println("5. salir");
 
 
@@ -101,7 +102,7 @@ public class main {
             if(p.equalsIgnoreCase("base")){
                 return Posicion.base;
             }
-        }while(0 == 0 /*while troll*/);
+        }while(true /*while troll*/);
     }
     public static ArrayList<Jugador> listaJ(ArrayList<Jugador> lista){
 
@@ -142,10 +143,9 @@ public class main {
         } else {
             System.out.println("valid date");
             equipo.setCreacion(testDate);
+            equipos.put(equipo.getNombre(),equipo);
         }
 
-        equipo.setCreacion(testDate);
-        equipos.put(equipo.getNombre(),equipo);
     }
     public static void registrarJ(){
 
@@ -224,7 +224,12 @@ public class main {
             }while(opcion2 < 1 || opcion2 > 8);
             switch (opcion2) {
                 case 1:
-
+                    String nombre = pedirCadena("nombre del jugador?");
+                    for(Jugador j : lista){
+                        if(j.getNombre().contains(nombre)){
+                            System.out.println(j);
+                        }
+                    }
                     break;
                 case 2:
                     int uno = parametros();
@@ -249,9 +254,22 @@ public class main {
                         if(posicion.equalsIgnoreCase(String.valueOf(j.getPosicion()))){
                             System.out.println(j);
                         }
+                        if(posicion.equalsIgnoreCase("ala")){
+                            System.out.println(j);
+                        }
+                        if(posicion.equalsIgnoreCase("pibot")){
+                            System.out.println(j);
+                        }
+                        if(posicion.equalsIgnoreCase("base")){
+                            System.out.println(j);
+                        }
                     }
                     break;
                 case 5:
+
+                    //La consulta de fecha, a pesar de que la hace correctamente el codigo peta, no he podido encontrar una solucion mejor para el date
+
+
                     SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
                     Date testDate = null;
                     String date = "02/30/2012";
